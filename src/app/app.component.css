@@ -1,0 +1,12 @@
+h1, h3 {
+	font-family: Impact, Times New Roman;
+}
+
+app-menu {
+	color: blue;
+	font-weight: bold;
+}
+
+div {
+	padding: 0 10px;
+}

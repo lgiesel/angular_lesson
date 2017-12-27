@@ -1,0 +1,77 @@
+<div class='componentdiv'> <!-- can put this class style in global style sheet -->
+	<p *ngIf='todayIsTuesday'>Today is Tuesday</p> <!-- only went to display one of these two p tags -->
+	<p *ngIf='!todayIsTuesday'>Today is not Tuesday</p>
+	<p><label>The text: {{textForAdmin}}</label></p> <!-- Add interpolation from resume.component file -->
+	<button (click)= 'buttonClick()' 
+			*ngIf='isAdmin'>Button for Admins only!
+	</button> <!-- Add *ngIf from var in resume.comp -->
+	<!-- <P><input [(text)]  type='text'><p> -->
+	<p>
+		<input [(ngModel)]="textForAdmin" type="text"> <!-- add ngModel to forms element makes this two way; normally it is one way --> 	
+	</p>	
+
+</div>
+
+<!-- Create another tab - playground
+	* newtab: Playground [menu]
+	* label
+	* 3 buttons  
+		- 3 diff texts in label - red, blue, green or 1,2,3 or whatever when btn clicked
+	
+
+ -->
+
+<!-- lifecycle hooks - OnInit - angular.io/guide/lifecycle-hooks -  there are several
+	CLI generated oninit hook - only need this for PRS
+	Others exist tho
+-->
+
+<!-- ONE WAY BINDING
+
+{{textForAdmin}}
+	Binding label to data in that property ; all have to do is change data
+	ng takes care of binding data to UI
+
+Today is not Tuesday
+
+The text: An admin clicked the button
+
+Button for Admins only!	
+===================
+
+Data binding
+
+<component 	html
+astring		{{astring}}
+only have to change component astring once and anywhere that {{}} displays only chg data
+CHANGE DATA TO CHANGE UI!!!!! - ONE WAY BINDING
+COMP.TS IS WHERE CODE GOES
+COMP.SPEC FILE IS FOR AUTOMATIC TESTING
+-->
+	
+<!-- ngIf notes
+
+*ngIf Go to Resume and see following if Tuesday true
+	HOME RESUME ABOUT
+	Today is Tuesday
+
+	Button appears - Button for Admins only! 
+
+	IF NOT TUESDAY
+	Today is not Tuesday
+
+	Button for Admins only!
+
+	IF no admin or not Tues
+	Today is not Tuesday
+	W no button                     
+
+	Interpolation takes data out of component and puts on screen  
+	*ngIf doesnt fire until user has data in it ; until call DB, user is null-  relates to asynchronous request/response 
+
+		*nfIf 
+    	Can be on any html tag
+		Applies to all under that tag
+		Can have nested *ngIf within another *ngIf   	
+-->
+

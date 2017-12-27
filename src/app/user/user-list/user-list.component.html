@@ -1,0 +1,35 @@
+<div> 
+	<p *ngIf='!users'>The data is loading...></p>
+	<!-- <p *ngIf='!user'>The data is loading... </p>  Shows loading msg while no user yet --> 
+	<table class='table table-sm'>
+			<!-- *ngIf='user'>  Add ngIf to only render user    --> 
+		<tr>
+			<th>Id</th>
+			<th>Username</th>
+			<th>Password</th>
+			<th>First Name</th>
+			<th>Last name</th>
+			<th>Phone</th>
+			<th>Email</th>
+			<th>Is Reviewer</th>
+			<th>Is Admin</th>
+			<th>Is Active</th>
+			<th>Actions</th>
+		</tr>
+
+		<tr *ngFor="let user of users">
+ 			<td>{{user.Id}}</td>
+ 			<td>{{user.Username}}</td> 
+ 			<td>{{user.Password}}</td> 
+ 			<td>{{user.FirstName}}</td> 
+ 			<td>{{user.LastName}}</td> 
+ 			<td>{{user.Phone}}</td> 
+ 			<td>{{user.Email}}</td> 
+ 			<td>{{user.IsReviewer ? "Yes" : 'No'}}</td> 
+ 			<td>{{user.IsAdmin ? "Yes" : 'No'}}</td> 
+ 			<td>{{user.IsActive ? "Yes" : 'No'}}</td> 
+ 			<td><a routerLink='/user/detail/{{user.Id}}'>Detail</a></td> <!-- want to use link to go to dtl page; use interpolation-->
+ 			<!-- in userlist, actions/detail link, hover over it and see id in lowerleft of console -->
+ 		</tr>
+	</table>
+</div>

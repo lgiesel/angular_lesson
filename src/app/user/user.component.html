@@ -1,0 +1,17 @@
+<div> 
+	<p *ngIf='!user'>The data is loading... </p> <!-- Shows loading msg while no user yet -->
+	<table *ngIf='user'> <!--  Add ngIf to only render user  -->  
+		<!-- ngModel is ng tag on html tag to create a 2way binding -->
+		<tr><td>Id:</td><td><input [(ngModel)]='user.id' type='text'></td></tr>
+		<tr><td>Username:</td><td><input [(ngModel)]='user.username' type='text'></td></tr>
+		<tr><td>Password:</td><td><input [(ngModel)]='user.password' type='text'></td></tr>
+		<tr><td>First name:</td><td><input [(ngModel)]='user.firstname' type='text'></td></tr>
+		<tr><td>Lastname:</td><td><input [(ngModel)]='user.lastname' type='text'></td></tr>
+		<tr><td>Phone:</td><td><input [(ngModel)]='user.phone' type='text'></td></tr>
+		<tr><td>Email:</td><td><input [(ngModel)]='user.email' type='text'></td></tr>
+		<tr><td>Is Admin:</td><td><input [(ngModel)]='user.admin' type='text'></td></tr>
+		<tr><td>Is Reviewer:</td><td><input [(ngModel)]='user.reviewer' type='text'></td></tr>
+		<tr><td>Is Active:</td><td><input [(ngModel)]='user.active' type='text'></td></tr>
+	</table>
+	<button (click) = 'showConsole()'>Print user</button>
+</div>
